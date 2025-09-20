@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Globe - Your Gateway to Extraordinary Experiences</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+        border-bottom: 1px solid #eee;
+      }
+
+      .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .support-email {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .promo-banner {
+        text-align: center;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+
+      .promo-banner a {
+        color: #0071c2;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .start-exploring-btn {
+        color: #0071c2;
+        margin-left: 10px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+      }
+
+      .lang-selector,
+      .currency-selector {
+        margin-left: 15px;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .lang-selector:after,
+      .currency-selector:after {
+        content: "▼";
+        font-size: 8px;
+        margin-left: 5px;
+        color: #999;
+      }
+
+      .settings-icon {
+        margin-left: 15px;
+        cursor: pointer;
+      }
+
+      /* Main Navigation */
+      .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        width: 63px;
+        height: 16px;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: #666;
+        border: 1px solid #ddd;
+      }
+
+      .nav-menu {
+        display: flex;
+        margin-left: 30px;
+      }
+
+      .nav-item {
+        margin-right: 25px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .nav-item a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-item a:after {
+        content: "▼";
+        font-size: 8px;
+        margin-left: 5px;
+        color: #999;
+      }
+
+      .account-section {
+        display: flex;
+        align-items: center;
+      }
+
+      .sign-in-btn {
+        background: none;
+        border: none;
+        color: #333;
+        font-size: 14px;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      .account-btn {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+
+      .account-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .trip-btn {
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        color: #333;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      /* Tooltips */
+      .tooltip {
+        position: absolute;
+        top: 80px;
+        right: 70px;
+        width: 250px;
+        background-color: #fff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        border-radius: 5px;
+        color: #333;
+        font-size: 13px;
+        z-index: 100;
+        line-height: 1.4;
+      }
+
+      .tooltip:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+      }
+
+      /* Search Section */
+      .search-section {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        padding: 15px;
+        position: relative;
+      }
+
+      .search-tabs {
+        display: flex;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+      }
+
+      .search-tab {
+        padding: 8px 15px;
+        margin-right: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .search-tab.active {
+        background-color: #000;
+        color: white;
+        border-radius: 20px;
+      }
+
+      .search-box {
+        position: relative;
+        margin-bottom: 15px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 10px 15px;
+        padding-left: 35px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        font-size: 14px;
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+      }
+
+      .search-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .filter-dropdown {
+        padding: 6px 12px;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .filter-dropdown:after {
+        content: "▼";
+        font-size: 8px;
+        margin-left: 5px;
+        color: #999;
+      }
+
+      .search-note {
+        font-size: 12px;
+        color: #666;
+        display: flex;
+        align-items: center;
+      }
+
+      .search-note span {
+        margin-left: 5px;
+      }
+
+      /* Attractions Section */
+      .section-title {
+        margin: 30px 0 8px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .section-subtitle {
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .attractions-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      .attraction-card {
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+      }
+
+      .attraction-header {
+        display: flex;
+        align-items: flex-start;
+        padding: 10px;
+        padding-bottom: 0;
+      }
+
+      .attraction-rating {
+        padding: 3px;
+        font-size: 13px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+
+      .attraction-info {
+        padding: 5px 10px 10px;
+      }
+
+      .attraction-name {
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      .attraction-checkbox {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
+
+      /* Things to do Section */
+      .things-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .thing-card {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .thing-header {
+        background-color: #000;
+        color: white;
+        padding: 6px 10px;
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      .thing-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        font-size: 13px;
+        position: relative;
+      }
+
+      .thing-img:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 75%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+      }
+
+      .thing-info {
+        padding: 12px;
+        position: relative;
+      }
+
+      .star-rating {
+        color: #ffc107;
+        margin-bottom: 8px;
+        font-size: 13px;
+        letter-spacing: -1px;
+      }
+
+      .thing-description {
+        color: #666;
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 25px;
+      }
+
+      .like-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        font-size: 18px;
+        color: #ccc;
+        cursor: pointer;
+      }
+
+      .like-btn:hover {
+        color: #e91e63;
+      }
+
+      .view-all-btn {
+        display: block;
+        width: max-content;
+        margin: 0 auto 30px;
+        padding: 8px 20px;
+        background-color: #000;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      /* Promo Section */
+      .promo-section {
+        text-align: center;
+        margin-bottom: 0;
+        background-color: #000;
+        color: white;
+        padding: 30px 0;
+      }
+
+      .promo-section .section-title {
+        margin: 0;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #000;
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-logo {
+        background-color: #111;
+        width: 120px;
+        height: 46px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        font-size: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #333;
+      }
+
+      .footer-links h3 {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .newsletter {
+        max-width: 300px;
+      }
+
+      .newsletter h3 {
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .newsletter p {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .newsletter-form {
+        display: flex;
+        position: relative;
+      }
+
+      .newsletter-input {
+        flex-grow: 1;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        font-size: 13px;
+      }
+
+      .newsletter-btn {
+        padding: 10px 15px;
+        background-color: #0071c2;
+        color: white;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        font-weight: 500;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .footer-bottom {
+        margin-top: 30px;
+        text-align: center;
+        color: #999;
+        font-size: 13px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+
+      /* Icons */
+      .icon {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-color: #ccc;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 18px;
+        font-size: 12px;
+        color: #fff;
+      }
+
+      .icon-info {
+        background-color: #0071c2;
+      }
+
+      .icon-search {
+        transform: rotate(-45deg);
+        font-weight: bold;
+      }
+
+      /* Annotations from prototype */
+      .annotation {
+        position: absolute;
+        width: 200px;
+        font-size: 12px;
+        line-height: 1.3;
+        color: #666;
+        z-index: 20;
+      }
+
+      .annotation-line {
+        position: absolute;
+        background-color: #000;
+        z-index: 10;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .attractions-grid,
+        .things-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav-menu {
+          margin-left: 0;
+          margin-top: 15px;
+        }
+
+        .footer-container {
+          flex-direction: column;
+        }
+
+        .footer-links,
+        .newsletter {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .attractions-grid,
+        .things-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .search-filters {
+          flex-direction: column;
+        }
+
+        .filter-dropdown {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <a href="mailto:support@Globe.com" class="support-email"
+          >support@Globe.com</a
+        >
+
+        <div class="promo-banner">
+          <a href="#"
+            >Unlock the Magic of Travel with Globe - Your Gateway to
+            Extraordinary Experiences</a
+          >
+          <a href="#" class="start-exploring-btn">Start Exploring</a>
+        </div>
+
+        <div class="lang-currency">
+          <div class="lang-selector">EN</div>
+          <div class="currency-selector">GBP</div>
+          <div class="settings-icon">⚙️</div>
+        </div>
+      </div>
+
+      <div class="main-nav">
+        <div class="logo-container">
+          <div class="logo">63 x 16</div>
+
+          <div class="nav-menu">
+            <div class="nav-item">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="nav-item">
+              <a href="index.html">Attractions</a>
+            </div>
+            <div class="nav-item">
+              <a href="/listing.html">Places to Stay</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="account-section">
+          <button class="sign-in-btn">Sign in</button>
+          <div class="account-btn">
+            <div class="account-icon">👤</div>
+            <span>Account</span>
+          </div>
+          <button class="trip-btn">Plan Your Trip</button>
+        </div>
+      </div>
+
+      <!-- Tooltip example (normally hidden, shown based on interaction) -->
+      <div class="tooltip">
+        Directs user to their Trip itinerary where all the users favorite
+        attractions are stored.
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Search Section -->
+      <div class="search-section">
+        <div class="search-tabs">
+          <div class="search-tab active">Tours</div>
+          <div class="search-tab">Hotels</div>
+          <div class="search-tab">Tickets</div>
+          <div class="search-tab">Rental</div>
+          <div class="search-tab">Activities</div>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search attractions to visit..."
+          />
+        </div>
+
+        <div class="search-filters">
+          <div class="filter-dropdown">Categories</div>
+          <div class="filter-dropdown">Duration</div>
+          <div class="filter-dropdown">Review Rating</div>
+          <div class="filter-dropdown">Price range</div>
+          <div class="filter-dropdown">
+            <span class="icon">≡</span>
+            More filters
+          </div>
+        </div>
+
+        <div class="search-note">
+          <span class="icon icon-info">i</span>
+          <span>Search hints will appear when typing data.</span>
+        </div>
+      </div>
+
+      <!-- Top Attractions -->
+      <h2 class="section-title">Top Searched Attractions</h2>
+      <p class="section-subtitle">Favourite destinations of London</p>
+
+      <div class="attractions-grid">
+        <!-- Attraction 1 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.1/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">Borough Market</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" />
+        </div>
+
+        <!-- Attraction 2 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.1/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">Tower of London</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" checked />
+        </div>
+
+        <!-- Attraction 3 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.3/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">Buckingham Palace</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" checked />
+        </div>
+
+        <!-- Attraction 4 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.5/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">Westminster Abbey</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" />
+        </div>
+
+        <!-- Attraction 5 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.1/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">The London Eye</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" checked />
+        </div>
+
+        <!-- Attraction 6 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.1/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">Camden Market</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" checked />
+        </div>
+
+        <!-- Attraction 7 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.5/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">The National Gallery</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" checked />
+        </div>
+
+        <!-- Attraction 8 -->
+        <div class="attraction-card">
+          <div class="attraction-header">
+            <div class="attraction-rating">4.5/5</div>
+          </div>
+          <div class="attraction-info">
+            <div class="attraction-name">St. Paul's Cathedral</div>
+          </div>
+          <input type="checkbox" class="attraction-checkbox" />
+        </div>
+      </div>
+
+      <!-- London's Top Things to do -->
+      <h2 class="section-title">London's Top Things to do</h2>
+      <p class="section-subtitle">Trending now...</p>
+
+      <div class="things-grid">
+        <!-- Thing 1 -->
+        <div class="thing-card">
+          <div class="thing-header">The London Eye</div>
+          <div class="thing-img">
+            <span>119 x 88</span>
+          </div>
+          <div class="thing-info">
+            <div class="star-rating">★★★★★</div>
+            <div class="thing-description">
+              A famous ferris wheel offering stunning views of London's skyline
+              - a must-see attraction for tourists.
+            </div>
+            <button class="like-btn">❤</button>
+          </div>
+        </div>
+
+        <!-- Thing 2 -->
+        <div class="thing-card">
+          <div class="thing-header">Hop-on Hop-off Bus Tour</div>
+          <div class="thing-img">
+            <span>119 x 88</span>
+          </div>
+          <div class="thing-info">
+            <div class="star-rating">★★★★★</div>
+            <div class="thing-description">
+              A convenient way of exploring London's sightseeing attractions at
+              their own pace.
+            </div>
+            <button class="like-btn">❤</button>
+          </div>
+        </div>
+
+        <!-- Thing 3 -->
+        <div class="thing-card">
+          <div class="thing-header">Notting Hill Carnival</div>
+          <div class="thing-img">
+            <span>119 x 88</span>
+          </div>
+          <div class="thing-info">
+            <div class="star-rating">★★★★★</div>
+            <div class="thing-description">
+              A beautiful botanical garden providing a green escape from
+              London's bustling streetscape.
+            </div>
+            <button class="like-btn">❤</button>
+          </div>
+        </div>
+
+        <!-- Thing 4 -->
+        <div class="thing-card">
+          <div class="thing-header">National Art Gallery</div>
+          <div class="thing-img">
+            <span>119 x 87</span>
+          </div>
+          <div class="thing-info">
+            <div class="star-rating">★★★★★</div>
+            <div class="thing-description">
+              Historic art gallery showcasing a vast collection of paintings and
+              artifacts reflecting London's cultural heritage.
+            </div>
+            <button class="like-btn">❤</button>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="view-all-btn">View all activities</a>
+    </div>
+
+    <!-- Promo Section -->
+    <div class="promo-section">
+      <h2 class="section-title">Come Visit London!</h2>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-links">
+            <div class="footer-logo">120 x 46</div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="mailto:support@Globe.com">support@Globe.com</a></li>
+              <li>Working Hours 24/7</li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Private Policy</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="newsletter">
+            <h3>Newsletter</h3>
+            <p>Stay up-to-date</p>
+            <div class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Enter your email"
+              />
+              <button class="newsletter-btn">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Globe. All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/Itinerary/script.js"></script>
+  </body>
+</html>
