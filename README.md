@@ -1,8 +1,4 @@
-Here’s a polished **README.md** you can use for your GitHub project:
-
----
-
-# 🌍 Globe Travel
+🌍 Globe Travel
 
 Globe Travel is a prototype **travel booking platform** with an integrated **AI-powered chatbot**. It allows users to explore attractions, browse hotel and house listings, and view detailed property pages with galleries, amenities, booking forms, and maps.
 
@@ -49,7 +45,7 @@ Globe Travel is a prototype **travel booking platform** with an integrated **AI-
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/globe-travel.git
+git clone https://github.com/rida05432/globe-travel.git
 cd globe-travel
 ```
 
