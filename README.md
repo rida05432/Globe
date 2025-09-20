@@ -65,15 +65,3 @@ node server.js
 
 4. **Open in Browser**
    Visit `http://localhost:3000` or your Live Server port.
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-Would you like me to also add a **screenshot/demo section** with placeholders for images/GIFs, so recruiters can instantly see the UI?
