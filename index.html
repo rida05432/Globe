@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Globe Travel</title>
+    <link rel="icon" href="images/logo1.png" type="image/png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot/smaller-chat.css" />
+  </head>
+  <body>
+    <div class="header">
+      <nav id="navBar">
+        <a href="index.html">
+          <img src="images/logo1.png" class="logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="Itinerary/index.html">Attractions</a></li>
+          <li><a href="listing.html">Places to Stay</a></li>
+        </ul>
+        <div id="authSection">
+          <a href="/registration/register.html" class="register-btn"
+            >Register Now</a
+          >
+        </div>
+      </nav>
+      <div class="container">
+        <h1>Visit London Today</h1>
+        <p class="intro-text">
+          Discover the perfect blend of historic charm and modern vibrancy in
+          England's capital. From iconic landmarks to hidden gems, plan your
+          unforgettable London adventure.
+        </p>
+        <div class="search-bar">
+          <form>
+            <div class="form-group location-input">
+              <label>Location</label>
+              <input type="text" value="City - London" readonly />
+            </div>
+            <div class="form-group">
+              <label>Check in</label>
+              <input type="date" id="checkin" name="checkin" />
+            </div>
+            <div class="form-group">
+              <label>Check out</label>
+              <input type="date" id="checkout" name="checkout" />
+            </div>
+            <div class="form-group">
+              <label>Guest</label>
+              <input
+                type="number"
+                id="guests"
+                placeholder="Number of guests"
+                min="1"
+              />
+            </div>
+            <button type="submit"><img src="images/search.png" /></button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Main content sections -->
+      <!-- ... all your existing content ... -->
+
+      <h2 class="sub-title">Popular Attractions</h2>
+      <div class="exclusives">
+        <div>
+          <img src="images/london-1.jpg" />
+          <span>
+            <h3>Tower Bridge</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div>
+          <img src="images/london-2.jpg" />
+          <span>
+            <h3>Borough Market</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div>
+          <img src="images/london-3.jpg" />
+          <span>
+            <h3>Buckingham Palace</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div>
+          <img src="images/london-4.jpg" />
+          <span>
+            <h3>The National Gallery</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div>
+          <img src="images/london-5.jpg" />
+          <span>
+            <h3>Westminster Abbey</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- Trip Planning Section with Blue Button -->
+      <div class="trip-planning-container">
+        <h2 class="sub-title">Plan your trip easier with Globe</h2>
+        <div class="trip-steps-container">
+          <div class="trip-step">
+            <div class="icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <h3>Discover Convenience</h3>
+            <p>Search hotels across every corner of London</p>
+          </div>
+
+          <div class="step-connector">
+            <hr class="dashed-line" />
+          </div>
+
+          <div class="trip-step">
+            <div class="icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Choose your Location</h3>
+            <p>
+              Pick from over 5000+ hotels to bring you closer to your chosen
+              activities
+            </p>
+          </div>
+
+          <div class="step-connector">
+            <hr class="dashed-line" />
+          </div>
+
+          <div class="trip-step">
+            <div class="icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#333333"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </div>
+            <h3>Hit the Road</h3>
+            <p>Have the adventure of a lifetime</p>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <a href="./listing.html" class="plan-trip-button"
+            >Start Planning Your Trip</a
+          >
+        </div>
+      </div>
+
+      <!-- Explore by Recommendations Section -->
+      <!-- Enhanced Hotel Cards Section with Additional Features -->
+      <div class="recommendations-section">
+        <h2 class="sub-title">Explore by Recommendations</h2>
+        <p class="section-subtitle">
+          Discover our range of places to stay by category
+        </p>
+
+        <div class="hotel-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Hotels
+          </button>
+          <button class="filter-btn" data-filter="luxury">Luxury</button>
+          <button class="filter-btn" data-filter="mid-range">Mid-Range</button>
+          <button class="filter-btn" data-filter="budget">Budget</button>
+        </div>
+
+        <div class="hotel-cards">
+          <div class="hotel-card" data-category="luxury">
+            <div class="hotel-image-container">
+              <img
+                src="images/ritz-london.jpg"
+                alt="The Ritz London, Mayfair"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Trending</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>The Ritz London, Mayfair</h3>
+                <div class="rating">★4.8</div>
+              </div>
+              <p class="hotel-description">
+                A historic hotel with world-class service, elegant rooms, and
+                fine dining.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 5 Days & 4 Nights</li>
+                <li>
+                  <i class="fas fa-coffee"></i> Includes luxury suite, afternoon
+                  tea
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> Central London</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£545</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-card" data-category="luxury">
+            <div class="hotel-image-container">
+              <img
+                src="images/shangri-la.jpg"
+                alt="Shangri-La The Shard"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Best View</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>Shangri-La The Shard</h3>
+                <div class="rating">★4.8</div>
+              </div>
+              <p class="hotel-description">
+                Stay in London's highest hotel, offering breathtaking panoramic
+                views of the city.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 5 Days & 4 Nights</li>
+                <li>
+                  <i class="fas fa-spa"></i> Includes skyline view & spa access
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> London Bridge</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£3199</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-card" data-category="mid-range">
+            <div class="hotel-image-container">
+              <img
+                src="images/landmark-london.jpg"
+                alt="The Landmark London"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Popular</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>The Landmark London</h3>
+                <div class="rating">★4.7</div>
+              </div>
+              <p class="hotel-description">
+                A world-famous 5-star hotel on the River Thames, perfect for a
+                cultured London getaway.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 7 Days & 6 Nights</li>
+                <li>
+                  <i class="fas fa-ticket-alt"></i> Includes riverside suite,
+                  VIP theatre tickets
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> South Bank</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£1799</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hotel-card" data-category="budget">
+            <div class="hotel-image-container">
+              <img
+                src="images/z-hotel.jpg"
+                alt="Z Hotel Victoria"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Best Value</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>Z Hotel Victoria</h3>
+                <div class="rating">★4.0</div>
+              </div>
+              <p class="hotel-description">
+                A stylish yet affordable hotel offering compact, modern rooms in
+                the heart of London, just a short walk from Buckingham Palace.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 5 Days & 4 Nights</li>
+                <li>
+                  <i class="fas fa-wine-glass"></i> Includes complimentary
+                  evening wine & cheese
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> Victoria</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£799</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Hotel Card 1 -->
+          <div class="hotel-card" data-category="budget">
+            <div class="hotel-image-container">
+              <img
+                src="images/premier-inn.jpg"
+                alt="Premier Inn London Victoria"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Family Friendly</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>Premier Inn London Victoria</h3>
+                <div class="rating">★4.2</div>
+              </div>
+              <p class="hotel-description">
+                Clean, comfortable rooms with all the essentials, perfect for
+                families exploring London on a budget.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 4 Days & 3 Nights</li>
+                <li>
+                  <i class="fas fa-utensils"></i> Includes breakfast buffet
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> Victoria</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£625</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Hotel Card 2 -->
+          <div class="hotel-card" data-category="mid-range">
+            <div class="hotel-image-container">
+              <img
+                src="images/citizen-m.jpg"
+                alt="CitizenM Tower of London"
+                class="hotel-image"
+              />
+              <span class="hotel-badge">Modern</span>
+            </div>
+            <div class="hotel-content">
+              <div class="hotel-header">
+                <h3>CitizenM Tower of London</h3>
+                <div class="rating">★4.5</div>
+              </div>
+              <p class="hotel-description">
+                Trendy, tech-forward hotel with compact, smart rooms and
+                stunning views of the Tower of London.
+              </p>
+              <ul class="hotel-features">
+                <li><i class="fas fa-calendar"></i> 5 Days & 4 Nights</li>
+                <li>
+                  <i class="fas fa-cocktail"></i> Includes rooftop bar access
+                </li>
+                <li><i class="fas fa-map-marker-alt"></i> Tower Hill</li>
+              </ul>
+              <div class="hotel-footer">
+                <div class="hotel-price">
+                  <span class="price-label">per person</span>
+                  <span class="price-amount">£950</span>
+                </div>
+                <a href="#" class="book-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-more-container">
+          <a href="./listing.html" class="view-more-btn">View All Hotels</a>
+        </div>
+      </div>
+      <!-- London Travellers Stories Section -->
+      <div class="travellers-stories-container">
+        <h2 class="sub-title">Travellers Stories</h2>
+
+        <div class="stories-container">
+          <div class="story-card">
+            <div class="story-image">
+              <img src="images/london-story-1.jpg" alt="London Attractions" />
+              <div class="story-overlay">
+                <p class="story-text">
+                  Explore London's top attractions in just 3 days
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <div class="story-image">
+              <img src="images/london-story-2.jpg" alt="London Hidden Gems" />
+              <div class="story-overlay">
+                <p class="story-text">
+                  Discover London's hidden gems off the tourist trail
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-card">
+            <div class="story-image">
+              <img src="images/london-story-3.jpg" alt="London on a Budget" />
+              <div class="story-overlay">
+                <p class="story-text">
+                  Experience the best of London on a £500 budget
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-container">
+          <a href="#" class="start-button">Start exploring London</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section (properly placed inside body) -->
+    <div class="footer-section">
+      <div class="container">
+        <div class="footer-container">
+          <!-- Logo and Social Icons -->
+          <div class="footer-brand">
+            <img src="images/logo1.png" alt="Globe Logo" class="footer-logo" />
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Footer Navigation Links -->
+          <div class="footer-nav">
+            <div class="footer-column">
+              <h4>Our Destinations</h4>
+              <ul>
+                <li><a href="#">Canada</a></li>
+                <li><a href="#">Alaska</a></li>
+                <li><a href="#">France</a></li>
+                <li><a href="#">Iceland</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Our Activities</h4>
+              <ul>
+                <li><a href="#">Our Tours</a></li>
+                <li><a href="#">Harry Potter Tour</a></li>
+                <li><a href="#">Family Activities</a></li>
+                <li><a href="#">Food Spots</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Travel Blogs</h4>
+              <ul>
+                <li><a href="#">Bali Travel Guide</a></li>
+                <li><a href="#">Sri Lanka Travel Guide</a></li>
+                <li><a href="#">Peru Travel Guide</a></li>
+                <li><a href="#">Bali Travel Guide</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>About Us</h4>
+              <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Work with us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Contact Us</h4>
+              <ul>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Work with us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="chatbot-container hidden">
+      <div class="chatbot-header">
+        <h3>Travel Assistant</h3>
+        <div class="chatbot-actions">
+          <button
+            id="chatbot-toggle-size"
+            class="chatbot-toggle-size"
+            title="Expand"
+          >
+            <i class="fas fa-expand-alt"></i>
+          </button>
+          <button id="chatbot-close" class="chatbot-close" title="Close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message bot-message">
+          <div class="bot-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <p>
+              Hi! I'm your Travel Assistant. I'll be assisting you here today.
+            </p>
+            <p>HOW CAN I HELP?</p>
+            <div class="suggestion-buttons">
+              <button class="suggestion-btn" id="live-transport-btn">
+                LIVE Transport Updates
+              </button>
+              <button class="suggestion-btn" id="estimated-travel-btn">
+                Estimated Travel Time
+              </button>
+              <button class="suggestion-btn" id="activities-btn">
+                Activities
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="input-field">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type something here..."
+          />
+          <div class="input-actions">
+            <button class="send-btn" id="send-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" class="chatbot-icon">
+      <i class="fas fa-robot" style="font-size: 24px"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="auth.js"></script>
+
+    <script>
+      var navBar = document.getElementById("navBar");
+      function togglebtn() {
+        navBar.classList.toggle("hidemenu");
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get DOM elements
+        const chatbotIcon = document.getElementById("chatbot-icon");
+        const chatbotContainer = document.getElementById("chatbot-container");
+        const chatbotClose = document.getElementById("chatbot-close");
+        const chatbotToggleSize = document.getElementById(
+          "chatbot-toggle-size"
+        );
+
+        // Open button functionality (robot icon)
+        if (chatbotIcon) {
+          chatbotIcon.addEventListener("click", function () {
+            console.log("Chatbot icon clicked");
+            if (chatbotContainer) {
+              chatbotContainer.style.display = "flex";
+              chatbotContainer.classList.remove("hidden");
+              console.log("Chatbot container shown");
+            }
+          });
+        }
+
+        // Close button functionality
+        if (chatbotClose) {
+          chatbotClose.addEventListener("click", function () {
+            console.log("Close button clicked");
+            if (chatbotContainer) {
+              chatbotContainer.style.display = "none";
+              chatbotContainer.classList.add("hidden");
+              console.log("Chatbot container hidden");
+            }
+          });
+        }
+
+        // Toggle size functionality - redirect to chatbot.html
+        if (chatbotToggleSize) {
+          chatbotToggleSize.addEventListener("click", function () {
+            window.location.href = "chatbot/chatbot.html";
+          });
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Chatbot JS -->
+    <script src="js/index-script.js"></script>
+    <script src="chatbot/chatbot.js"></script>
+  </body>
+</html>

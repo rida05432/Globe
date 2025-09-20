@@ -1,0 +1,39 @@
+import React from 'react'; const LondonHotels = () => { return (
+<div className="container my-5">
+  <h2 className="sub-title mb-4">Recommended Hotels in London</h2>
+
+  <div className="trending">
+    <div>
+      <img src="/api/placeholder/400/300" alt="The Savoy Hotel" />
+      <h3>The Savoy</h3>
+      <p className="text-muted">Luxury on the Thames</p>
+      <p className="price">From £350 per night</p>
+    </div>
+
+    <div>
+      <img src="/api/placeholder/400/300" alt="The Ritz London" />
+      <h3>The Ritz</h3>
+      <p className="text-muted">Piccadilly Elegance</p>
+      <p className="price">From £450 per night</p>
+    </div>
+
+    <div>
+      <img src="/api/placeholder/400/300" alt="Citizen M Tower" />
+      <h3>Citizen M</h3>
+      <p className="text-muted">Tower of London View</p>
+      <p className="price">From £150 per night</p>
+    </div>
+
+    <div>
+      <img src="/api/placeholder/400/300" alt="Premier Inn London" />
+      <h3>Premier Inn</h3>
+      <p className="text-muted">Multiple Locations</p>
+      <p className="price">From £89 per night</p>
+    </div>
+  </div>
+
+  <div className="text-center mt-4">
+    <a href="listing.html" className="cta-btn">View All London Hotels</a>
+  </div>
+</div>
+); }; export default LondonHotels;
