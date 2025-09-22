@@ -65,3 +65,5 @@ node server.js
 
 4. **Open in Browser**
    Visit `http://localhost:3000` or your Live Server port.
+   <img width="3042" height="1650" alt="globe" src="https://github.com/user-attachments/assets/07fd720a-000b-415b-a83d-414d63b558d1" />
+
